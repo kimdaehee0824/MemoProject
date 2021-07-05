@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				57958A08268C7AB300C6EB64 /* MemoListScene.swift */,
-				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
 				57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */,
+				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

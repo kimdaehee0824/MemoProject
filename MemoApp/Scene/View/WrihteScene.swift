@@ -10,6 +10,7 @@ import SwiftUI
 struct WrihteScene: View {
     @EnvironmentObject var store : MemoStore
     @State private var content : String = ""
+    @Binding var composer : Bool
     
     var body: some View {
         NavigationView {
@@ -18,21 +19,27 @@ struct WrihteScene: View {
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarTitle("새 메모", displayMode: .inline)
-            .navigationBarItems(leading: DissmissButton(), trailing: SaveButton())
+            .navigationBarItems(leading: DissmissButton(show: $composer ), trailing: SaveButton(show: $composer))
         }
         
     }
     
     fileprivate struct DissmissButton : View {
+        @Binding var show : Bool
         var body: some View {
-            Button(action: {}, label: {
+            Button(action: {
+                self.show = false
+            }, label: {
                 Text("취소")
             })
         }
     }
     fileprivate struct SaveButton : View {
+        @Binding var show : Bool
         var body: some View {
-            Button(action: {}, label: {
+            Button(action: {
+                self.show = false
+            }, label: {
                 Text("저장")
             })
         }
@@ -40,7 +47,8 @@ struct WrihteScene: View {
 
     struct WrihteScene_Previews: PreviewProvider {
         static var previews: some View {
-            WrihteScene()
+            WrihteScene(composer: .constant(false))
+                .environmentObject(MemoStore())
         }
     }
 }

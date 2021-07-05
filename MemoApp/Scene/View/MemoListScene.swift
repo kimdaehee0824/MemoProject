@@ -10,19 +10,33 @@ import SwiftUI
 struct MemoListScene: View {
     @EnvironmentObject var store : MemoStore
     @EnvironmentObject var fommater : DateFormatter
-   
+    @State var showComposer : Bool = false
+    
     var body: some View {
         NavigationView {
-            List(store.list) {
-                memo in
+            List(store.list) { memo in
                 MemoCell(memo: memo)
             }
             .navigationTitle("나의 메모")
+            .navigationBarItems(trailing: Modal(show: $showComposer))
+            .sheet(isPresented: $showComposer, content: {
+                WrihteScene(composer: self.$showComposer)
+            })
         }
         .padding()
     }
 }
-
+fileprivate struct Modal : View {
+    @Binding var show : Bool
+    var body: some View {
+        Button(action: {
+            self.show = true
+        }, label: {
+            Image(systemName: "plus")
+        })
+    }
+    
+}
 struct MemoListScene_Previews: PreviewProvider {
     static var previews: some View {
         MemoListScene()
