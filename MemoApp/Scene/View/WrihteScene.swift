@@ -15,7 +15,8 @@ struct WrihteScene: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("", text: $content)
+                TextView(text: $content)
+                    .frame( maxWidth: .infinity, maxHeight: .infinity)
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarTitle("새 메모", displayMode: .inline)
@@ -47,7 +48,7 @@ struct WrihteScene: View {
             })
         }
     }
-
+    
     struct WrihteScene_Previews: PreviewProvider {
         static var previews: some View {
             WrihteScene(composer: .constant(false))
