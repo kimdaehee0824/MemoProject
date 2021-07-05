@@ -21,6 +21,7 @@ struct MemoListScene: View {
             .navigationBarItems(trailing: Modal(show: $showComposer))
             .sheet(isPresented: $showComposer, content: {
                 WrihteScene(composer: self.$showComposer)
+                    .environmentObject( self.store)
             })
         }
         .padding()

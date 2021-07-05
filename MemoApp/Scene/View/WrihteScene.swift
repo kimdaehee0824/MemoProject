@@ -19,15 +19,18 @@ struct WrihteScene: View {
             }
             .frame( maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarTitle("새 메모", displayMode: .inline)
-            .navigationBarItems(leading: DissmissButton(show: $composer ), trailing: SaveButton(show: $composer))
+            .navigationBarItems(leading: DissmissButton(show: $composer, content: $content ), trailing: SaveButton(show: $composer))
         }
         
     }
     
     fileprivate struct DissmissButton : View {
         @Binding var show : Bool
+        @EnvironmentObject var store : MemoStore
+        @Binding var content : String
         var body: some View {
             Button(action: {
+                self.store.insert(memo: self.content)
                 self.show = false
             }, label: {
                 Text("취소")
