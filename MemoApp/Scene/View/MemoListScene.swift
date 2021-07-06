@@ -15,13 +15,21 @@ struct MemoListScene: View {
     var body: some View {
         NavigationView {
             List(store.list) { memo in
-                MemoCell(memo: memo)
+                
+                NavigationLink(
+                    destination: Detail(memo: memo),
+                    label: {
+                        MemoCell(memo: memo)
+                    })
+               
             }
             .navigationTitle("나의 메모")
             .navigationBarItems(trailing: Modal(show: $showComposer))
             .sheet(isPresented: $showComposer, content: {
                 WrihteScene(composer: self.$showComposer)
+//                    .environmentObject(KeboredSet)
                     .environmentObject( self.store)
+                    
             })
         }
         .padding()
@@ -45,4 +53,3 @@ struct MemoListScene_Previews: PreviewProvider {
             .environmentObject(DateFormatter.memoDateFormetter)
     }
 }
-

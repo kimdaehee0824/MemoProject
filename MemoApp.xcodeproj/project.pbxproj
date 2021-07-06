@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		576EC83C2693202B0016F386 /* KeboredSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC83B2693202B0016F386 /* KeboredSet.swift */; };
 		577258FC269317AF00F34B4C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577258FB269317AE00F34B4C /* TextView.swift */; };
 		57958A05268C7AB300C6EB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A04268C7AB300C6EB64 /* AppDelegate.swift */; };
 		57958A07268C7AB300C6EB64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A06268C7AB300C6EB64 /* SceneDelegate.swift */; };
@@ -20,9 +21,11 @@
 		57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A24268C8B7100C6EB64 /* DateFormetter.swift */; };
 		57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CC268EF68F001D93B7 /* MemoCell.swift */; };
 		57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */; };
+		57E815C7269445B700D0A9AA /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E815C6269445B700D0A9AA /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		576EC83B2693202B0016F386 /* KeboredSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeboredSet.swift; sourceTree = "<group>"; };
 		577258FB269317AE00F34B4C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		57958A01268C7AB300C6EB64 /* MemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57958A04268C7AB300C6EB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		57958A24268C8B7100C6EB64 /* DateFormetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormetter.swift; sourceTree = "<group>"; };
 		57BAD9CC268EF68F001D93B7 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrihteScene.swift; sourceTree = "<group>"; };
+		57E815C6269445B700D0A9AA /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				57958A03268C7AB300C6EB64 /* MemoApp */,
+				57958A0F268C7AB600C6EB64 /* Preview Content */,
 				57958A02268C7AB300C6EB64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +84,7 @@
 				57958A12268C7AB600C6EB64 /* LaunchScreen.storyboard */,
 				57958A15268C7AB600C6EB64 /* Info.plist */,
 				57958A0A268C7AB300C6EB64 /* MemoApp.xcdatamodeld */,
-				57958A0F268C7AB600C6EB64 /* Preview Content */,
+				576EC83B2693202B0016F386 /* KeboredSet.swift */,
 			);
 			path = MemoApp;
 			sourceTree = "<group>";
@@ -114,8 +119,8 @@
 			children = (
 				57958A08268C7AB300C6EB64 /* MemoListScene.swift */,
 				57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */,
-				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
 				577258FB269317AE00F34B4C /* TextView.swift */,
+				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		57BAD9CE268EFC3D001D93B7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				57E815C6269445B700D0A9AA /* Detail.swift */,
 				57BAD9CB268EF680001D93B7 /* View */,
 			);
 			path = Scene;
@@ -200,6 +206,7 @@
 			files = (
 				57958A05268C7AB300C6EB64 /* AppDelegate.swift in Sources */,
 				57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */,
+				57E815C7269445B700D0A9AA /* Detail.swift in Sources */,
 				57958A1F268C7E5F00C6EB64 /* MemoStore.swift in Sources */,
 				57958A07268C7AB300C6EB64 /* SceneDelegate.swift in Sources */,
 				57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */,
@@ -208,6 +215,7 @@
 				57958A1D268C7BCB00C6EB64 /* Memo.swift in Sources */,
 				57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */,
 				577258FC269317AF00F34B4C /* TextView.swift in Sources */,
+				576EC83C2693202B0016F386 /* KeboredSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +355,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 368YFJ26SB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MemoApp/Info.plist;
@@ -368,7 +375,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 368YFJ26SB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MemoApp/Info.plist;
