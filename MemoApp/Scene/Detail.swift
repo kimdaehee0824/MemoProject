@@ -30,6 +30,7 @@ struct Detail: View {
                         .font(.footnote)
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
+                
                 HStack {
                     Button (action: {
                         self.showSheet.toggle()
@@ -38,7 +39,7 @@ struct Detail: View {
                     })
                     .padding()
                     .fullScreenCover(isPresented: $showSheet, content: {
-                        WrihteScene(composer: self.$showSheet)
+                        WrihteScene(composer: self.$showSheet, memo : self.memo)
                             .environmentObject(self.store)
                     })
                 }
