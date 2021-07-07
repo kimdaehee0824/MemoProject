@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct Detail: View {
+    
     @ObservedObject var memo : Memo
+    
     @EnvironmentObject var store : MemoStore
     @EnvironmentObject var fommater : DateFormatter
     
+    @State var showComposer : Bool = false
     @State private var showSheet = false
     
+    
+    
     var body: some View {
-        
-        NavigationView {
         VStack {
             ScrollView {
                 VStack {
@@ -31,22 +34,61 @@ struct Detail: View {
                         .foregroundColor(Color(UIColor.secondaryLabel))
                 }
                 
-                HStack {
-                    Button (action: {
-                        self.showSheet.toggle()
-                    }, label: {
-                        Image(systemName: "square.and.pencil")
-                    })
-                    .padding()
-                    .fullScreenCover(isPresented: $showSheet, content: {
-                        WrihteScene(composer: self.$showSheet, memo : self.memo)
-                            .environmentObject(self.store)
-                    })
-                }
             }
         }
         .navigationBarTitle( "메모 내용", displayMode: .inline)
-        }
+
+        .navigationBarItems(trailing:
+                                HStack {
+            disButton(memo: memo)
+            fixButton(memo: memo)
+        })
+        
+    }
+}
+
+fileprivate struct fixButton : View {
+    @ObservedObject var memo : Memo
+    @EnvironmentObject var store : MemoStore
+    @State private var showSheet = false
+    var body: some View {
+        Button(action: {
+            self.showSheet.toggle()
+        }, label: {
+            Image(systemName: "square.and.pencil")
+        })
+//            .padding()
+            .fullScreenCover(isPresented: $showSheet, content: {
+                WrihteScene(composer: self.$showSheet, memo : self.memo)
+                    .environmentObject(self.store)
+            })
+    }
+}
+fileprivate struct disButton : View {
+    @ObservedObject var memo : Memo
+    @EnvironmentObject var store : MemoStore
+    
+    @State private var showSheet = false
+    @State private var alent = false
+    
+    @Environment (\.presentationMode) var presentationMode
+    
+    var body: some View {
+        Button(action: {
+            
+            self.alent.toggle()
+        }, label: {
+            Image(systemName: "trash")
+                .foregroundColor(Color(UIColor.systemRed))
+        })
+//            .padding()
+            .alert(isPresented: $alent, content: {
+                Alert(title: Text("삭제 확인"), message: Text("삭제하시겠습니까?"),
+                      primaryButton: .destructive(Text("삭제"), action: {
+                    self.store.delete(memo: self.memo)
+                    self.presentationMode.wrappedValue.dismiss()
+                }), secondaryButton: .cancel())
+            })
     }
 }
 

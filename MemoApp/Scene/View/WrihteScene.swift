@@ -19,7 +19,7 @@ struct WrihteScene: View {
             VStack {
                 TextView(text: $content)
                     .frame( maxWidth: .infinity, maxHeight: .infinity)
-            }
+                                }
             .frame( maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarTitle(memo != nil ? "메모 편집" : "새 메모", displayMode: .inline)
             .navigationBarItems(leading: DissmissButton(show: $composer), trailing: SaveButton(show: $composer, content: $content, memo: memo))
@@ -42,13 +42,9 @@ struct WrihteScene: View {
     }
     fileprivate struct SaveButton : View {
         @Binding var show : Bool
-        
         @EnvironmentObject var store : MemoStore
         @Binding var content : String
-        
         var memo: Memo? = nil
-        
-         
         var body: some View {
             Button(action: {
                 if let memo = self.memo {

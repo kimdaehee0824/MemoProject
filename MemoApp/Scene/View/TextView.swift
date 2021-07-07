@@ -18,6 +18,7 @@ struct TextView: UIViewRepresentable {
     func makeUIView(context : Context) -> UITextView {
         let MyTextView = UITextView()
         MyTextView.delegate = context.coordinator
+        MyTextView.font = UIFont.preferredFont(forTextStyle: .title2)
         return MyTextView
         
     }
