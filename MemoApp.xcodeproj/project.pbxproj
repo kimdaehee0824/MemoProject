@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		576EC83C2693202B0016F386 /* KeboredSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC83B2693202B0016F386 /* KeboredSet.swift */; };
 		577258FC269317AF00F34B4C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577258FB269317AE00F34B4C /* TextView.swift */; };
 		57958A05268C7AB300C6EB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A04268C7AB300C6EB64 /* AppDelegate.swift */; };
 		57958A07268C7AB300C6EB64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A06268C7AB300C6EB64 /* SceneDelegate.swift */; };
@@ -19,13 +18,14 @@
 		57958A1D268C7BCB00C6EB64 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A1C268C7BCB00C6EB64 /* Memo.swift */; };
 		57958A1F268C7E5F00C6EB64 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A1E268C7E5F00C6EB64 /* MemoStore.swift */; };
 		57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A24268C8B7100C6EB64 /* DateFormetter.swift */; };
+		579C589226B04390006568BE /* MemoEnityIdentfiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C589126B04390006568BE /* MemoEnityIdentfiable.swift */; };
+		579C589426B04510006568BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C589326B04510006568BE /* CoreDataManager.swift */; };
 		57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CC268EF68F001D93B7 /* MemoCell.swift */; };
 		57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */; };
 		57E815C7269445B700D0A9AA /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E815C6269445B700D0A9AA /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		576EC83B2693202B0016F386 /* KeboredSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeboredSet.swift; sourceTree = "<group>"; };
 		577258FB269317AE00F34B4C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		57958A01268C7AB300C6EB64 /* MemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57958A04268C7AB300C6EB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		57958A1C268C7BCB00C6EB64 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		57958A1E268C7E5F00C6EB64 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 		57958A24268C8B7100C6EB64 /* DateFormetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormetter.swift; sourceTree = "<group>"; };
+		579C589126B04390006568BE /* MemoEnityIdentfiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEnityIdentfiable.swift; sourceTree = "<group>"; };
+		579C589326B04510006568BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		57BAD9CC268EF68F001D93B7 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrihteScene.swift; sourceTree = "<group>"; };
 		57E815C6269445B700D0A9AA /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
@@ -82,9 +84,10 @@
 				57958A06268C7AB300C6EB64 /* SceneDelegate.swift */,
 				57958A0D268C7AB600C6EB64 /* Assets.xcassets */,
 				57958A12268C7AB600C6EB64 /* LaunchScreen.storyboard */,
+				579C589326B04510006568BE /* CoreDataManager.swift */,
+				579C589126B04390006568BE /* MemoEnityIdentfiable.swift */,
 				57958A15268C7AB600C6EB64 /* Info.plist */,
 				57958A0A268C7AB300C6EB64 /* MemoApp.xcdatamodeld */,
-				576EC83B2693202B0016F386 /* KeboredSet.swift */,
 			);
 			path = MemoApp;
 			sourceTree = "<group>";
@@ -119,8 +122,8 @@
 			children = (
 				57958A08268C7AB300C6EB64 /* MemoListScene.swift */,
 				57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */,
-				577258FB269317AE00F34B4C /* TextView.swift */,
 				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
+				577258FB269317AE00F34B4C /* TextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */,
 				57E815C7269445B700D0A9AA /* Detail.swift in Sources */,
 				57958A1F268C7E5F00C6EB64 /* MemoStore.swift in Sources */,
+				579C589226B04390006568BE /* MemoEnityIdentfiable.swift in Sources */,
 				57958A07268C7AB300C6EB64 /* SceneDelegate.swift in Sources */,
 				57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */,
 				57958A09268C7AB300C6EB64 /* MemoListScene.swift in Sources */,
@@ -215,7 +219,7 @@
 				57958A1D268C7BCB00C6EB64 /* Memo.swift in Sources */,
 				57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */,
 				577258FC269317AF00F34B4C /* TextView.swift in Sources */,
-				576EC83C2693202B0016F386 /* KeboredSet.swift in Sources */,
+				579C589426B04510006568BE /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

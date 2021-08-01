@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MemoCell: View {
     @ObservedObject var memo : Memo
@@ -20,6 +21,8 @@ struct MemoCell: View {
             Text("\(memo.inserteDate, formatter: self.fommater)")
                 .font(.caption)
                 .foregroundColor(.gray)
+            
         })
+        
     }
 }

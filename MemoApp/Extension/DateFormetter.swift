@@ -13,7 +13,7 @@ extension DateFormatter {
         let date = Date()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale(identifier: "Ko_Kr")
+        dateFormatter.locale = Locale(identifier: "Ko_kr")
         return dateFormatter
     }()
 }

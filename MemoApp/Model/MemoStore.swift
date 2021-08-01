@@ -5,7 +5,12 @@
 //  Created by 김대희 on 2021/06/30.
 //
 
+import SwiftUI
 import Foundation
+import CoreData
+
+
+
 
 class MemoStore : ObservableObject {
     @Published var list : [Memo]

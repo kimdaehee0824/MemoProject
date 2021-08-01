@@ -37,6 +37,7 @@ struct WrihteScene: View {
                 self.show = false
             }, label: {
                 Text("취소")
+                    .foregroundColor(Color(UIColor.systemOrange))
             })
         }
     }
@@ -55,6 +56,7 @@ struct WrihteScene: View {
                 self.show = false
             }, label: {
                 Text("저장")
+                    .foregroundColor(Color(UIColor.systemOrange))
             })
         }
     }

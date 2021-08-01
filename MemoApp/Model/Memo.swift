@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import CoreData
+
+
 
 class Memo: Identifiable, ObservableObject {
+    
     let id : UUID
     @Published var content : String
     let inserteDate : Date
@@ -18,7 +22,10 @@ class Memo: Identifiable, ObservableObject {
         self.content = content
         self.inserteDate = inserteDate
     }
+    
+    
 }
+
 
 extension Memo: Equatable {
     static func == (lhs: Memo, rhs: Memo) -> Bool {

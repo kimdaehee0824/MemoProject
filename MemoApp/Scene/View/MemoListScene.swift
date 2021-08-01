@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreData
+
 
 struct MemoListScene: View {
     @EnvironmentObject var store : MemoStore
@@ -41,6 +43,7 @@ fileprivate struct Modal : View {
             self.show = true
         }, label: {
             Image(systemName: "plus")
+                .foregroundColor(Color(UIColor.systemOrange))
         })
     }
     
