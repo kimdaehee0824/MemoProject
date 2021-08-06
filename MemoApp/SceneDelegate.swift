@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         let context = CoreDataManager .persistentContainer.viewContext
-        let store = MemoStore()
+        let store = CoreDataManager.shared 
 
 
         let contentView = MemoListScene()

@@ -15,13 +15,12 @@
 		57958A0E268C7AB600C6EB64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57958A0D268C7AB600C6EB64 /* Assets.xcassets */; };
 		57958A11268C7AB600C6EB64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57958A10268C7AB600C6EB64 /* Preview Assets.xcassets */; };
 		57958A14268C7AB600C6EB64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57958A12268C7AB600C6EB64 /* LaunchScreen.storyboard */; };
-		57958A1D268C7BCB00C6EB64 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A1C268C7BCB00C6EB64 /* Memo.swift */; };
-		57958A1F268C7E5F00C6EB64 /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A1E268C7E5F00C6EB64 /* MemoStore.swift */; };
 		57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57958A24268C8B7100C6EB64 /* DateFormetter.swift */; };
-		579C589226B04390006568BE /* MemoEnityIdentfiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C589126B04390006568BE /* MemoEnityIdentfiable.swift */; };
 		579C589426B04510006568BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C589326B04510006568BE /* CoreDataManager.swift */; };
 		57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CC268EF68F001D93B7 /* MemoCell.swift */; };
 		57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */; };
+		57BE753226B902150015E698 /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE753126B902150015E698 /* ViewControllerResolver.swift */; };
+		57BE753426B902370015E698 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BE753326B902370015E698 /* SearchBar.swift */; };
 		57E815C7269445B700D0A9AA /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E815C6269445B700D0A9AA /* Detail.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,13 +35,14 @@
 		57958A10268C7AB600C6EB64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57958A13268C7AB600C6EB64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57958A15268C7AB600C6EB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57958A1C268C7BCB00C6EB64 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
-		57958A1E268C7E5F00C6EB64 /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 		57958A24268C8B7100C6EB64 /* DateFormetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormetter.swift; sourceTree = "<group>"; };
-		579C589126B04390006568BE /* MemoEnityIdentfiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoEnityIdentfiable.swift; sourceTree = "<group>"; };
 		579C589326B04510006568BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		57BAD9CC268EF68F001D93B7 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrihteScene.swift; sourceTree = "<group>"; };
+		57BE753126B902150015E698 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerResolver.swift; path = "../../../../Downloads/iOS.Blog.SwiftUI_Search_Bar_in_Navigation_Bar-main/SwiftUI_Search_Bar_in_Navigation_Bar/SearchBar/ViewControllerResolver.swift"; sourceTree = "<group>"; };
+		57BE753326B902370015E698 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		57CE96C526BD068A0088A455 /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
+		57CE96C626BD06DF0088A455 /* FACEBOLF.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FACEBOLF.OTF; sourceTree = "<group>"; };
 		57E815C6269445B700D0A9AA /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,12 +80,13 @@
 				57BAD9CE268EFC3D001D93B7 /* Scene */,
 				57958A1B268C7BB100C6EB64 /* Model */,
 				57958A21268C8B3400C6EB64 /* Extension */,
-				57958A04268C7AB300C6EB64 /* AppDelegate.swift */,
+				57CE96C426BD067C0088A455 /* SearchBar */,
 				57958A06268C7AB300C6EB64 /* SceneDelegate.swift */,
+				57BE753126B902150015E698 /* ViewControllerResolver.swift */,
+				57958A04268C7AB300C6EB64 /* AppDelegate.swift */,
 				57958A0D268C7AB600C6EB64 /* Assets.xcassets */,
+				57CE96C626BD06DF0088A455 /* FACEBOLF.OTF */,
 				57958A12268C7AB600C6EB64 /* LaunchScreen.storyboard */,
-				579C589326B04510006568BE /* CoreDataManager.swift */,
-				579C589126B04390006568BE /* MemoEnityIdentfiable.swift */,
 				57958A15268C7AB600C6EB64 /* Info.plist */,
 				57958A0A268C7AB300C6EB64 /* MemoApp.xcdatamodeld */,
 			);
@@ -103,8 +104,7 @@
 		57958A1B268C7BB100C6EB64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				57958A1C268C7BCB00C6EB64 /* Memo.swift */,
-				57958A1E268C7E5F00C6EB64 /* MemoStore.swift */,
+				579C589326B04510006568BE /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				57958A08268C7AB300C6EB64 /* MemoListScene.swift */,
-				57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */,
 				57BAD9CC268EF68F001D93B7 /* MemoCell.swift */,
+				57BAD9CF268EFCCE001D93B7 /* WrihteScene.swift */,
 				577258FB269317AE00F34B4C /* TextView.swift */,
 			);
 			path = View;
@@ -135,6 +135,15 @@
 				57BAD9CB268EF680001D93B7 /* View */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		57CE96C426BD067C0088A455 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				57CE96C526BD068A0088A455 /* ViewControllerResolver.swift */,
+				57BE753326B902370015E698 /* SearchBar.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,13 +219,12 @@
 				57958A05268C7AB300C6EB64 /* AppDelegate.swift in Sources */,
 				57958A25268C8B7100C6EB64 /* DateFormetter.swift in Sources */,
 				57E815C7269445B700D0A9AA /* Detail.swift in Sources */,
-				57958A1F268C7E5F00C6EB64 /* MemoStore.swift in Sources */,
-				579C589226B04390006568BE /* MemoEnityIdentfiable.swift in Sources */,
 				57958A07268C7AB300C6EB64 /* SceneDelegate.swift in Sources */,
+				57BE753226B902150015E698 /* ViewControllerResolver.swift in Sources */,
+				57BE753426B902370015E698 /* SearchBar.swift in Sources */,
 				57BAD9D0268EFCCE001D93B7 /* WrihteScene.swift in Sources */,
 				57958A09268C7AB300C6EB64 /* MemoListScene.swift in Sources */,
 				57958A0C268C7AB300C6EB64 /* MemoApp.xcdatamodeld in Sources */,
-				57958A1D268C7BCB00C6EB64 /* Memo.swift in Sources */,
 				57BAD9CD268EF68F001D93B7 /* MemoCell.swift in Sources */,
 				577258FC269317AF00F34B4C /* TextView.swift in Sources */,
 				579C589426B04510006568BE /* CoreDataManager.swift in Sources */,

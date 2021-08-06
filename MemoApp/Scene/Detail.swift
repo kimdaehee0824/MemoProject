@@ -12,9 +12,9 @@ struct Detail: View {
     
     @Environment (\.presentationMode) var presentationMode
     
-    @ObservedObject var memo : Memo
+    @ObservedObject var memo : MemoEnity
     
-    @EnvironmentObject var store : MemoStore
+    @EnvironmentObject var store : CoreDataManager
     @EnvironmentObject var fommater : DateFormatter
     
     @State var showComposer : Bool = false
@@ -22,11 +22,12 @@ struct Detail: View {
     @State private var alent = false
     
     var body: some View {
+        
         VStack {
             ScrollView {
                 VStack {
                     HStack {
-                        Text(self.memo.content)
+                        Text(self.memo.contant ?? "")
                             .font(.title2)
                             .onTapGesture {
                                 self.showSheet.toggle()
@@ -34,11 +35,10 @@ struct Detail: View {
                             .onLongPressGesture {
                                 self.alent.toggle()
                             }
-
                             .padding()
                         Spacer()
                     }
-                    Text("\(self.memo.inserteDate, formatter: fommater)")
+                    Text("\(self.memo.insertDate ?? Date(), formatter: fommater)")
                         .padding()
                         .font(.footnote)
                         .foregroundColor(Color(UIColor.secondaryLabel))
@@ -51,36 +51,46 @@ struct Detail: View {
                 .environmentObject(self.store)
         })
         .alert(isPresented: $alent, content: {
-            Alert(title: Text("삭제 확인"), message: Text("삭제하시겠습니까?"),
-                  primaryButton: .destructive(Text("삭제"), action: {
-                self.store.delete(memo: self.memo)
-                self.presentationMode.wrappedValue.dismiss()
-            }), secondaryButton: .cancel())
+            Alert(title: Text("Confirm Delete"), message: Text("Are you sure you want to delete it?"),
+                  primaryButton:  .cancel(Text("cancel"))
+                  , secondaryButton: .destructive(Text("delete"), action: {
+                    self.store.delete(memo: self.memo)
+                    self.presentationMode.wrappedValue.dismiss()
+                  })
+            )
         })
-
-        .navigationBarTitle( "메모 내용", displayMode: .inline)
-        .navigationBarItems(trailing:
-                                HStack {
-                                    Button(action: {
-                                        self.alent.toggle()
-                                    }, label: {
-                                        Image(systemName: "trash")
-                                            .foregroundColor(Color(UIColor.systemRed))
-                                    })
-                                    Button(action: {
-                                        self.showSheet.toggle()
-                                    }, label: {
-                                        Image(systemName: "square.and.pencil")
-                                            .foregroundColor(Color(UIColor.systemOrange))
-                                    })
-                                    
-                                })
+        
+        .navigationBarTitle( "Memo Content", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        
+        .navigationBarItems(
+            leading: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(Color(UIColor.systemOrange))
+            }), trailing:
+                HStack {
+                    Button(action: {
+                        self.alent.toggle()
+                    }, label: {
+                        Image(systemName: "trash")
+                            .foregroundColor(Color(UIColor.systemRed))
+                    })
+                    Button(action: {
+                        self.showSheet.toggle()
+                    }, label: {
+                        Image(systemName: "square.and.pencil")
+                            .foregroundColor(Color(UIColor.systemOrange))
+                    })
+                    
+                })
     }
 }
 struct Detail_Previews: PreviewProvider { 
     static var previews: some View {
-        Detail(memo: Memo(content: "Swift"))
-            .environmentObject(MemoStore())
+        Detail(memo: MemoEnity(context:CoreDataManager.mainContext))
+            .environmentObject(CoreDataManager.shared)
             .environmentObject(DateFormatter.memoDateFormetter)
     }
 }

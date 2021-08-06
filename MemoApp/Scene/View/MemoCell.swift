@@ -9,20 +9,18 @@ import SwiftUI
 import CoreData
 
 struct MemoCell: View {
-    @ObservedObject var memo : Memo
+    @ObservedObject var memo : MemoEnity
     @EnvironmentObject var fommater : DateFormatter
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: nil, content: {
-            Text(memo.content)
+            Text(memo.contant ?? "")
                 .font(.body)
                 .lineLimit(1)
-            Text("\(memo.inserteDate, formatter: self.fommater)")
+            Text("\(memo.insertDate ?? Date(), formatter: self.fommater)")
                 .font(.caption)
                 .foregroundColor(.gray)
-            
         })
-        
     }
 }

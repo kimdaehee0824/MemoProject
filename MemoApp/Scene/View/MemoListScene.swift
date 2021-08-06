@@ -10,39 +10,59 @@ import CoreData
 
 
 struct MemoListScene: View {
-    @EnvironmentObject var store : MemoStore
+    
+    @ObservedObject var searchBar: SearchBar = SearchBar()
+    
+    
+    @EnvironmentObject var store : CoreDataManager
     @EnvironmentObject var fommater : DateFormatter
+    
     @State var showComposer : Bool = false
+    @State var filterString : String = ""
+    
+    
+    @FetchRequest (entity: MemoEnity.entity(),sortDescriptors: [NSSortDescriptor(keyPath: \MemoEnity.insertDate,ascending: false)])
+    var memoList : FetchedResults<MemoEnity>
     
     var body: some View {
         NavigationView {
             List {
-                ForEach (store.list) { memo in
+                ForEach (memoList) { memo in
                     NavigationLink(
                         destination: Detail(memo: memo),
                         label: {
                             MemoCell(memo: memo)
                         })
                 }
-                .onDelete(perform: store.delete)
-                
+                .onDelete(perform: delete)
             }
-            .navigationTitle("나의 메모")
+            
+            .add(self.searchBar)
+            .navigationBarTitle("All Memo")
+            .font(Font.custom("FACEBOLF", size: 40))
             .navigationBarItems(trailing: Modal(show: $showComposer))
             .sheet(isPresented: $showComposer, content: {
                 WrihteScene(composer: self.$showComposer)
                     .environmentObject( self.store)
-        })
+            })
+        }
+        
+    }
+    func delete(set : IndexSet) {
+        for index in set {
+            store.delete(memo: memoList[index])
         }
     }
+    
 }
+
 fileprivate struct Modal : View {
     @Binding var show : Bool
     var body: some View {
         Button(action: {
             self.show = true
         }, label: {
-            Image(systemName: "plus")
+            Image(systemName: "plus.circle")
                 .foregroundColor(Color(UIColor.systemOrange))
         })
     }
@@ -51,7 +71,7 @@ fileprivate struct Modal : View {
 struct MemoListScene_Previews: PreviewProvider {
     static var previews: some View {
         MemoListScene()
-            .environmentObject(MemoStore())
+            .environmentObject(CoreDataManager.shared)
             .environmentObject(DateFormatter.memoDateFormetter)
     }
 }

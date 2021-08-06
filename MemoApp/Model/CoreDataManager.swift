@@ -12,9 +12,8 @@ class CoreDataManager: ObservableObject {
     static let shared = CoreDataManager()
     private init () {}
     
-    
     // MARK: - Core Data stack
-
+    
     func AddMemo(content : String) {
         let newMemo = MemoEnity(context: Self.mainContext)
         newMemo.id = UUID()
@@ -32,42 +31,41 @@ class CoreDataManager: ObservableObject {
         memo?.contant = contant
         saveContext()
     }
-    func udpDate(memo : MemoEnity?) {
+    func delete(memo : MemoEnity?) {
         if let memo = memo {
             Self.mainContext.delete(memo)
             saveContext()
         }
     }
-
+    
     static var mainContext : NSManagedObjectContext {
         return persistentContainer.viewContext 
     }
     
     static  var persistentContainer: NSPersistentContainer = {
-
+        
         let container = NSPersistentContainer(name: "MemoApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-
+                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext () {
         let context = Self.persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-           
+                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
-
 }

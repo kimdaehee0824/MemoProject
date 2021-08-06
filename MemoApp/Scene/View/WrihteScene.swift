@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct WrihteScene: View {
-    @EnvironmentObject var store : MemoStore
+    @EnvironmentObject var store : CoreDataManager
     @State private var content : String = ""
     @Binding var composer : Bool
     
-    var memo: Memo? = nil
+    var memo: MemoEnity? = nil
     
     var body: some View {
         NavigationView {
             VStack {
                 TextView(text: $content)
                     .frame( maxWidth: .infinity, maxHeight: .infinity)
-                                }
+            }.padding()
             .frame( maxWidth: .infinity, maxHeight: .infinity)
-            .navigationBarTitle(memo != nil ? "메모 편집" : "새 메모", displayMode: .inline)
+            .navigationBarTitle(memo != nil ? "Edit Memo" : "New Memo", displayMode: .inline)
+            .font(Font.custom("FACEBOLF", size: 20))
             .navigationBarItems(leading: DissmissButton(show: $composer), trailing: SaveButton(show: $composer, content: $content, memo: memo))
         }
         .onAppear {
-            self.content = self.memo?.content ?? ""
+            self.content = self.memo?.contant ?? ""
         }
     }
     
@@ -36,26 +37,26 @@ struct WrihteScene: View {
             Button(action: {
                 self.show = false
             }, label: {
-                Text("취소")
+                Text("cancel")
                     .foregroundColor(Color(UIColor.systemOrange))
             })
         }
     }
     fileprivate struct SaveButton : View {
         @Binding var show : Bool
-        @EnvironmentObject var store : MemoStore
+        @EnvironmentObject var store : CoreDataManager
         @Binding var content : String
-        var memo: Memo? = nil
+        var memo: MemoEnity? = nil
         var body: some View {
             Button(action: {
                 if let memo = self.memo {
-                    self.store.upDate(memo: memo, content: self.content)
+                    self.store.upDate(memo: memo, contant: self.content)
                 } else {
-                    self.store.insert(memo: self.content)
+                    self.store.AddMemo (content: self.content)
                 }
                 self.show = false
             }, label: {
-                Text("저장")
+                Text("save")
                     .foregroundColor(Color(UIColor.systemOrange))
             })
         }
@@ -64,7 +65,7 @@ struct WrihteScene: View {
     struct WrihteScene_Previews: PreviewProvider {
         static var previews: some View {
             WrihteScene(composer: .constant(false))
-                .environmentObject(MemoStore())
+                .environmentObject(CoreDataManager.shared)
         }
     }
 }
