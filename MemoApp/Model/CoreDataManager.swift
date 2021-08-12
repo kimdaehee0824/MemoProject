@@ -19,13 +19,8 @@ class CoreDataManager: ObservableObject {
         newMemo.id = UUID()
         newMemo.contant = content
         newMemo.insertDate = Date()
-        
         saveContext()
     }
-    
-    @FetchRequest (entity: MemoEnity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \MemoEnity.insertDate, ascending: false)])
-    
-    var memoList : FetchedResults<MemoEnity>
     
     func upDate(memo : MemoEnity?, contant : String) {
         memo?.contant = contant

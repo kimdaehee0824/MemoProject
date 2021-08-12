@@ -62,7 +62,7 @@ fileprivate struct Modal : View {
         Button(action: {
             self.show = true
         }, label: {
-            Image(systemName: "plus.circle")
+            Image(systemName: "square.and.pencil")
                 .foregroundColor(Color(UIColor.systemOrange))
         })
     }
