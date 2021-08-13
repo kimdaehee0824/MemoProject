@@ -28,7 +28,7 @@ struct Detail: View {
                 VStack {
                     HStack {
                         Text(self.memo.contant ?? "")
-                            .font(.title2)
+                            .font(.title3)
                             .onTapGesture {
                                 self.showSheet.toggle()
                             }

@@ -53,7 +53,6 @@ struct MemoListScene: View {
             store.delete(memo: memoList[index])
         }
     }
-    
 }
 
 fileprivate struct Modal : View {
